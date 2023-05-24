@@ -38,7 +38,7 @@ function DogCards({ id, img, age, breed, name, zip_code, setDisabledButton }) {
           variant="warning"
           style={{ border: "solid 2px white" }}
         >
-          {saved === true ? "Saved!" : "Save"}
+          {saved === true ? "Selected!" : "Select"}
         </Button>
       </Card.Body>
     </Card>

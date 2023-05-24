@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
+
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/auth");
@@ -13,6 +14,8 @@ function ControlledCarousel() {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+  window.localStorage.removeItem("selectedDogs");
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>

@@ -34,6 +34,12 @@ const Filters = ({ setFilterItem, setSortDirection }) => {
   };
   return (
     <div className="centered-filters">
+      <label htmlFor="sort">Sort Alphabetically</label>
+      <select className="select" onChange={handleChange} name="sort" id="sort">
+        <option>select</option>
+        <option value="A-Z">A-Z</option>
+        <option value="Z-A">Z-A</option>
+      </select>
       <label htmlFor="breeds">Filter by breed</label>
       <select
         className="select"
@@ -42,6 +48,7 @@ const Filters = ({ setFilterItem, setSortDirection }) => {
         id="breeds"
       >
         <option>select</option>
+        <option value="All">All</option>
         {breeds &&
           breeds.map((breed, idx) => {
             return (
@@ -50,13 +57,6 @@ const Filters = ({ setFilterItem, setSortDirection }) => {
               </option>
             );
           })}
-      </select>
-
-      <label htmlFor="sort">Sort Alphabetically</label>
-      <select className="select" onChange={handleChange} name="sort" id="sort">
-        <option>select</option>
-        <option value="A-Z">A-Z</option>
-        <option value="Z-A">Z-A</option>
       </select>
     </div>
   );

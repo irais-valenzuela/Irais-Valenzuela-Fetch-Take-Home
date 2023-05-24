@@ -22,14 +22,15 @@ const SearchPage = () => {
 
   const handleClick = () => navigate("/match");
 
-  // fetch all dogs breed ids
   useEffect(() => {
     setNewContent([]);
     const fetchDogBreeds = async () => {
       try {
         const { data } = await axios.get(
           filterItem
-            ? `https://frontend-take-home-service.fetch.com/dogs/search?breeds=${filterItem}&size=36`
+            ? filterItem === "All"
+              ? `https://frontend-take-home-service.fetch.com/dogs/search?sort=breed:${sortDirection}&size=36`
+              : `https://frontend-take-home-service.fetch.com/dogs/search?breeds=${filterItem}&size=36`
             : `https://frontend-take-home-service.fetch.com/dogs/search?sort=breed:${sortDirection}&size=36`,
           { withCredentials: true, credentials: "include" }
         );
@@ -42,7 +43,6 @@ const SearchPage = () => {
     fetchDogBreeds();
   }, [filterItem, sortDirection]);
 
-  // fetch dog objects by resultIds
   useEffect(() => {
     const fetchDogs = async () => {
       try {
