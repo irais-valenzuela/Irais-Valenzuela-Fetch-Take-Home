@@ -59,6 +59,7 @@ const Match = () => {
     fetchMatchedDog();
     setLoading(false);
   }, [match]);
+
   return (
     <div className="burnt-orange-background ">
       {loading ? (

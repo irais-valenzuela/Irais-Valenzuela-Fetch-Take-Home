@@ -50,7 +50,7 @@ function ControlledCarousel() {
             Welcome to my dog adoption website
           </h3>
           <p className="smaller-font-landing-page">
-            Click start to browse through our 1000+ avaliable dogs!
+            Click start to browse through our 1000+ available dogs!
           </p>
           <Button
             className="landing-page-button "

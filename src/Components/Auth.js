@@ -7,7 +7,6 @@ const Auth = () => {
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     if (e.target.name === "email") setEmail(e.target.value);
@@ -25,8 +24,6 @@ const Auth = () => {
 
       if (data === "OK") {
         navigate("/search");
-      } else {
-        setError("Please make sure to add name and email to login");
       }
     } catch (error) {
       console.error(error);
@@ -40,7 +37,7 @@ const Auth = () => {
     >
       <h1 className="login login-bold ">Login</h1>
       <label className="label" htmlFor="name">
-        Name
+        *Name
       </label>
       <input
         className="input"
@@ -51,7 +48,7 @@ const Auth = () => {
         placeholder="name"
       ></input>
       <label className="label" htmlFor="email">
-        Email
+        *Email
       </label>
       <input
         className="input"
@@ -62,7 +59,6 @@ const Auth = () => {
         placeholder="email"
       ></input>
       <button className="submit">Submit</button>
-      {!error ? error : ""}
     </form>
   );
 };

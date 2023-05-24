@@ -6,7 +6,8 @@ function PaginationComponent({ setNewContent }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [active, setActive] = useState(currentPage || 1);
-  const itemsPerPage = 35;
+
+  const itemsPerPage = 36;
 
   useEffect(() => {
     fetchData(1);
